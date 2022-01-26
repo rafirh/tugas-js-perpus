@@ -7,17 +7,23 @@ const kolom = ["nis","nama","kelas","buku","jumlah","tanggal"];
 const judulbuku = ["Matematika","IPA","IPS","PPKN","PJOK","Bahasa Inggris","Bahasa Indonesia","PJOK"];
 
 //Menampilkan daftar buku
-for (let index = 0; index < buku.length; index++) {
-    document.getElementById('buku').innerHTML += "<option value=" + judulbuku[index] + ">" + judulbuku[index] + "</option>";
+for (let i = 0; i < judulbuku.length; i++) {
+    document.getElementById('buku').innerHTML += "<option value=" + judulbuku[i] + ">" + judulbuku[i] + "</option>";
 }
 
-function kirim(){
+function simpan(){
     for (let index = 0; index < kolom.length; index++) {
         eval('var ' + kolom[index] + ' = []');
-
-        for (let j = 0; j < kolom[index].length + 1; j++) {
-            eval('var ' + kolom[index] + [j] +' = document.getElementById('+ kolom[index] +').value');
+        for (let j = 0; j < 1; j++) {
+            eval(kolom[index]+'['+ j +']'+' = document.getElementById("'+kolom[index]+'").value');
         }
-        
     }
+    for (let index = 0; index < kolom.length; index++) {
+        for (let j = 0; j < 1; j++) {
+            eval('document.getElementById("result").innerHTML += ' + kolom[index]+'['+ j +']');
+        }
+    }
+    
 }
+
+
