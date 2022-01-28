@@ -13,15 +13,15 @@ function simpan(){
             eval(kolom[index]+'['+ j +']'+' = document.getElementById("'+kolom[index]+'").value');
         }
     }
+    
     for (let index = 0; index < kolom.length; index++) {
         for (let j = 0; j < 1; j++) {
-            eval('document.getElementById("result").innerHTML += ' + kolom[index]+'['+ j +']' + ' ');
+            document.getElementById("tbody").innerHTML += "<td>"+eval(kolom[index]+'['+ j +']')+"</td>";
         }
     }
-    if(nis[0]!==""){
-        document.getElementById('result').innerHTML += "truee";
-    }
-    
+}
+for (let k = 0; k < kolom.length; k++) {
+    document.getElementById("thead").innerHTML += "<th>" + kolom[k].toUpperCase() + "</th>";
 }
 
 
